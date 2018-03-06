@@ -24,17 +24,17 @@ To [TITLE, e.g. update an image], [what the user should do, e.g. send a PUT requ
 
 Predefined properties are those that are already defined for all objects of UserForm type. You don't have to inlude them in configuration options. Please note that overwriting configuration for those properties can cause unexpected behavour of your form and can lead to internal application errors.  
 
-| Parameter      | Type          | Description | Validation | Notes
-|-
-| email          | String        | | presence, uniqueness, email format | |
+| Parameter      | Type          | Description | Validation  | Notes    |
+|----------------|---------------|-------------|-------------|----------|
+| email          | String        | | presence, uniqueness, email format ||
 | password       | String        | | Min 6 char| |
 | external_id    | String        | | | Deprecated |
 | id             | Int           | | | Deprecated |
 
 **User Form Optional Properties**
 
-| Parameter               | Type | Description | Notes |
-|-
+| Parameter                       | Type              | Description  | Notes |
+|---------------------------------|-------------------|--------------|------------------|
 | accept_terms_of_service         |                   | | Deprecated |
 | accept_emails                   | Boolean           | Enables email communication  | Default: true |
 | avatar                          |                   | | Deprecated |
