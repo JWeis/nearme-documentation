@@ -1,50 +1,70 @@
 ---
-title: Sign In user after Sign Up
+title: Automatic sign in after sign up
 permalink: /getting-started/users/sign-in-after-sign-up
 ---
 
-## Overview
+This tutorial will show you how can you add automatic sign in to a signup form so new user will be logged in after account creation.
 
-If you want your user to be immediately signed into the marketplace after sign up you need to use `callback_action` that will execute graphql mutation with his email and password. System knows it at this time, because it is still in the context of the form being sent.
+## Requirements
 
-## Example
+This tutorial assumes that you already have working Sign up form where user can create new account.
 
-### Sign Up form configuration
+* [Sign up forms](./sign-up-forms)
 
-In your `sign_up` form configuration lets add callback_action at the end of the YML definition.
+## Steps
+
+Automatic sign in after sign up is a three-step process:
+
+* Add `callback_actions` key to Sign up form
+* Create `user_session_create` graphql mutation
+* Create `session_create_form` form
+
+### Step 1: Add `callback_actions` key to Sign up form
+
+In your `sign_up` form configuration add `callback_actions` at the end (order doesn't matter) of the YML definition.
+
+##### form_configurations/sign_up.liquid
 
 {% raw %}
+
 ```liquid
 ---
 ...
-callback_actions: |-
-  {% execute_query user_session_create, email: @form.email, password: @form.password %}
+callback_actions: "{% execute_query user_session_create, email: @form.email, password: @form.password %}"
 ---
 ```
+
 {% endraw %}
 
-We are executing `user_session_create` query.
+We are executing `user_session_create` query, so we need to create it.
 
-
-### GraphQL mutation
+### Step 2: Create `user_session_create` graphql mutation
 
 This mutation takes two obligatory arguments: `email` and `password` - both strings.
 
+##### graph_queries/user_session_create.graphql
+
 ```graphql
 mutation user_session_create($email: String!, $password: String!) {
-  user_session_create(form_configuration_name: "session_create_form", email: $email, password: $password) {
+  user_session_create(
+    form_configuration_name: "session_create_form" # must match with `name` of your form
+    email: $email
+    password: $password
+  ) {
     email
   }
 }
 ```
 
-We are calling form called `session_create_form` with the same arguments we have received from the `callback_action`.
+We are calling form called `session_create_form` with the same arguments we have received from the `callback_actions`.
 
 Lets create that form now.
 
-### Session create form configuration
+### Create `session_create_form` form
 
-Because SessionForm is supported in our backend and it knows what to when receiving correct email and password, you dont need to define anything else - we will take care of everything else behind the scenes.
+SessionForm is supported by the server, so you don't need to define anything - server will take care of handling user credentials and authenticate user.
+
+##### form_configurations/session_create_form
 
 ```yml
 ---
@@ -53,6 +73,17 @@ base_form: SessionForm
 ---
 ```
 
-## Summary
+## Next steps
 
-Thats it. Any user should be logged in immediately after successfully creating an account.
+Congratulations! You have automatic user login after sign up.
+
+You can continue with adding other flow-control or informational features, example:
+
+* [manual sign in](./authentication)
+* [email notification to welcome your new user](../notifications/emails)
+* [create redirection to an edit profile page instead of homepage after signup](../pages/redirects)
+* flash message that will help user decide what to do
+
+## Questions?
+
+We are always happy to help with any questions you may have. Consult our [documentation](/), [contact support](), or [connect with our sales team]().
