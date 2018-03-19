@@ -1,13 +1,13 @@
 ---
-title: Automatic sign in after sign up
-permalink: /getting-started/users/sign-in-after-sign-up
+title: Singing in automatically after sign up
+permalink: /getting-started/users/signing-in-after-sign-up
 ---
 
-This tutorial will show you how can you add automatic sign in to a signup form so new user will be logged in after account creation.
+This tutorial will help you to add automatic sign in to a signup form, so that a new user will be logged in right after account creation.
 
 ## Requirements
 
-This tutorial assumes that you already have working Sign up form where user can create new account.
+This tutorial assumes that you already have a working Sign up form, where a user can create a new account.
 
 * [Sign up forms](./sign-up-forms)
 
@@ -15,9 +15,9 @@ This tutorial assumes that you already have working Sign up form where user can 
 
 Automatic sign in after sign up is a three-step process:
 
-* Add `callback_actions` key to Sign up form
-* Create `user_session_create` graphql mutation
-* Create `session_create_form` form
+1. Add `callback_actions` key to Sign up form
+2. Create `user_session_create` GraphQL mutation
+3. Create `session_create_form` form
 
 ### Step 1: Add `callback_actions` key to Sign up form
 
@@ -36,11 +36,11 @@ callback_actions: "{% execute_query user_session_create, email: @form.email, pas
 
 {% endraw %}
 
-We are executing `user_session_create` query, so we need to create it.
+This code snippet executes the `user_session_create` query, so you have to create it.
 
-### Step 2: Create `user_session_create` graphql mutation
+### Step 2: Create `user_session_create` GraphQL mutation
 
-This mutation takes two obligatory arguments: `email` and `password` - both strings.
+This mutation takes two obligatory arguments: `email` and `password`—both strings.
 
 ##### graph_queries/user_session_create.graphql
 
@@ -56,13 +56,13 @@ mutation user_session_create($email: String!, $password: String!) {
 }
 ```
 
-We are calling form called `session_create_form` with the same arguments we have received from the `callback_actions`.
+This calls the `session_create_form` with the same arguments you received from the `callback_actions`.
 
-Lets create that form now.
+Create the `session_create_form` form now.
 
 ### Create `session_create_form` form
 
-SessionForm is supported by the server, so you don't need to define anything - server will take care of handling user credentials and authenticate user.
+SessionForm is supported by the server, so you don't need to define anything—the server will take care of handling user credentials and authenticating the user.
 
 ##### form_configurations/session_create_form
 
@@ -75,14 +75,14 @@ base_form: SessionForm
 
 ## Next steps
 
-Congratulations! You have automatic user login after sign up.
+Congratulations! You have set up automatic user login after sign up.
 
-You can continue with adding other flow-control or informational features, example:
+You can continue with adding other flow-control or informational features, for example:
 
-* [manual sign in](./authentication)
-* [email notification to welcome your new user](../notifications/emails)
-* [create redirection to an edit profile page instead of homepage after signup](../pages/redirects)
-* flash message that will help user decide what to do
+* [Singing in a user manually](./authentication)
+* [Welcoming a new user with an email notification](../notifications/emails)
+* [Creating a redirection to an edit profile page instead of the homepage after signup](../pages/redirects)
+* Displaying a flash message that will help a user decide what to do
 
 ## Questions?
 
