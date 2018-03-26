@@ -42,7 +42,5 @@ In order to correctly communicate with the Platform OS engine and API, your code
 | `transactable_types`     | Directory for files that define Transactable Types.                                                                                                                                                                                  | Transactables <br>Transactable Types |
 | `translations`           | Directory for yml files of Translations for multilingual sites, also used to define date format, or flash messages.                                                                                                                  | Translations                     |
 
-[TO BE ADDED: diagram2: marketplace_builder required file structure]
-
 
 
