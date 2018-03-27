@@ -12,7 +12,5 @@ Besides standard web technologies like HTML, CSS, JavaScript (including JSON and
 
 *  **GraphQL**: A query language used to communicate with our data storages. To learn more, check out the [Official GraphQL Documentation](http://graphql.org/learn/). 
 
-* **Node.js**: An asynchronous event driven JavaScript runtime we used to support a small footprint deployment process. Visit the [Official Node.js Documentation](https://nodejs.org/en/docs/) to learn more. 
-
 
 [TO BE ADDED: diagram: technologies and where they are used in Platform OS]
