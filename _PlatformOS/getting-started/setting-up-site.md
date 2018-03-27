@@ -18,7 +18,7 @@ Setting up a site through the Partner Portal is a two-step process:
 
 ### Step 1: Create a new Instance
 
-Log in to our [Partner Portal](http://portal.apps.near-me.com), locate your Partner account in the list, and click on the ```Instances``` link next to it. 
+Log in to our [Partner Portal](https://portal.apps.near-me.com), and go to the Dashboard. Locate your Partner account in the list, and click on the ```Instances``` link next to it. 
 
 {% include alert/note.html content="Think of Instances as sites. To learn more about the concepts behind Platform OS and our Partner Portal, go to [How Platform OS works]() " %}
 
