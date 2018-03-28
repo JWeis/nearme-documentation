@@ -8,9 +8,10 @@ The Platform OS package consists of three components that help you create, updat
 * **Partner Portal**: Our Partner Portal is an online interface where our Partners can create, manage, and configure sites built with Platform OS, and manage other users of the Partner Portal. The site created on the Partner Portal will be the site you deploy and sync your changes to during development. 
    * The sites created are called **Instances**. Instances have a URL, and they represent different development environments, like staging or production. 
    * Users of the Partner Portal are called **Partners**. Partners have the permissions to create, manage, and configure Instances. Partners can also create and manage other Partners. 
+
 * **Marketplace Kit**: The Marketplace Kit is a command line interface that helps you deploy configuration files and assets to your Platform OS site.
 
-* **Marketplace Builder**: The Marketplace Builder is a starter package, that includes the required file structure along with some basic configuration files. 
+* **Required Directory Structure**: A starter package, that includes the required directory structure along with some basic configuration files. 
 
 ## Components in action
 The workflow of developing a site using Platform OS starts with a Partner creating a new Instance through the Partner Portal. Besides creating a new Instance, the Partner has the options to update and configure existing Instances, or copy and modify the configuration of one Instance to create another with the same or similar configuration. The Platform OS engine saves the Instance, which—after authorization—becomes available for developers to deploy and sync to. 
