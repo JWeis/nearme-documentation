@@ -29,8 +29,6 @@ Click on the ```Create``` button. We create the Instance, and once it's done, se
 
 ### Step 2: Set a password for the Instance
 
-{% include alert/note.html content="In case of staging Instances, you first have to set the email you would like to receive the password reset link to. On the Dashboard, click on the name of the Instance, then click on `Configuration`. Add the email address as the test email like this: ` "test_email": "yourname@youraddress.com",`, and click on `Update config`. " %}
-
 In the email you received, click on the link of your newly created Instance. You see your Instance, click on the ```Log In``` button. 
 
 To set your password for the Instance, click on the ```Reset your password``` link. Enter your email, and click on the ```Reset Password``` button. Follow the instructions we send you in email to set your password. 
