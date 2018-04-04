@@ -45,26 +45,10 @@ added 88 packages in 6.719s
 Use the following command to test the Marketplace Kit:
 
 ```
-marketplace-kit help
+marketplace-kit -V
 ```
 
-The help file for Marketplace Kit will be displayed:
-
-```
-Usage: marketplace-kit [options] [command]
-
-  Options:
-
-    -V, --version  output the version number
-    -h, --help     output usage information
-
-  Commands:
-
-    deploy|d       deploy marketplace
-    env            environments
-    sync           remote endpoints
-    help [cmd]     display help for [cmd]  
-```
+If the Marketplace Kit has been installed correctly, running this command displays the version of your Marketplace Kit. If the Marketplace Kit hasn't been installed, running this command gives a `command not found` error. 
 
 ## Next steps
 Congratulations! You have installed the Marketplace Kit. You can now deploy and sync changes to your Instance.   
