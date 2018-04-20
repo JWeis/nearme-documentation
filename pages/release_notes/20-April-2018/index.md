@@ -17,11 +17,11 @@ Update your marketplace-kit to version above 2.0.0.
 
 ### Use Partner Portal credentials
 
-Adding new environment using `marketplace-kit env add` command
+Add new environment using `marketplace-kit env add` command
 
     marketplace-kit env add staging --email email@example.com --url https://example.near-me.com
 
-please provide your Partner Portal credentials instead of instance account credentials.
+please provide your _Partner Portal_ credentials (not instance account credentials, as in older versions).
 
 You have the same permissions as you can see on your [Partner Portal permissions page](https://portal.apps.near-me.com/me/permissions).
 
