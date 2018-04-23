@@ -1,6 +1,6 @@
 ---
 title: [Month DD, YYYY — Release Notes]
-permalink: [/release-notes/DD-MONTH-YYYY]
+slug: [/release-notes/DD-MONTH-YYYY]
 ---
 
 [Short introduction, main ares of focus, etc.]

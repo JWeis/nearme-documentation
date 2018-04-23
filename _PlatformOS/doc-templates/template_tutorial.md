@@ -1,6 +1,6 @@
 ---
 title: [TITLE, format: VERBing a(n)/the NOUN(s)]
-permalink: [link, e.g. /get-started/install-docker]
+slug: [link, e.g. /get-started/install-docker]
 ---
 
 This guide will help you [describe what the user will achieve by the end of the guide]. [Explain goal, domain-related background information, any information that helps understand the purpose or terminology of the tutorial.]

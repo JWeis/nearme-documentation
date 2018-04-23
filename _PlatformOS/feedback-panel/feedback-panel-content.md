@@ -1,6 +1,6 @@
 ---
 title: Feedback panel content
-permalink: -
+slug: -
 ---
 
 ## Happy

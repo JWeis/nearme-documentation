@@ -1,6 +1,6 @@
 ---
 title: [API name] Introduction
-permalink: [link, e.g. /apis/api1_introduction]
+slug: [link, e.g. /apis/api1_introduction]
 ---
 
 Welcome to the [API name] documentation!

@@ -1,6 +1,6 @@
 ---
 title: [Title of the quickstart guide, recommended format: VERBing the/a(n)/Your NOUN, title-case]
-permalink: [link, e.g. /getting-started/quickstart-guide]
+slug: [link, e.g. /getting-started/quickstart-guide]
 ---
 
 This quickstart guide will help you [describe what the user will achieve by the end of the guide]. [Explain goal, domain-related background information, any information that helps understand the purpose or terminology of the quickstart guide.]

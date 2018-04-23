@@ -1,7 +1,6 @@
 ---
-title: How to contribute to our documentation pages
-summary: Quick introduction to help anyone improve Platform OS documentation.
-permalink: /contributing
+metadata_title: How to contribute to our documentation pages
+slug: contributing
 ---
 
 ## Permalinks
@@ -39,16 +38,16 @@ Make sure that every folder contains an`index.html` file, which should be either
 
 Every page can have meta data set via [YAML Front Matter](https://jekyllrb.com/docs/frontmatter/).
 
-* `title` - HTML title, good title is crucial for improving findability
-* `summary` - This is used in search engines to provide a description of the search result. Make sure it’s short and to the point - _it needs to fit below 70 characters_
-* `permalink` - Permalink that will be used to display this page
+* `metadata_title` - HTML title, good title is crucial for improving findability
+<!-- * `summary` - This is used in search engines to provide a description of the search result. Make sure it’s short and to the point - _it needs to fit below 70 characters_ -->
+* `slug` - Permalink that will be used to display this page
 
 ### Example
 
 ```liquid
-title:     Get access to our platform
+metadata_title:     Get access to our platform
 summary:   Get access to our platform description
-permalink: /getting-started/create-marketplace
+slug: getting-started/create-marketplace
 ---
 ## Here goes the actual page content
 
