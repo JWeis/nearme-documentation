@@ -99,3 +99,116 @@ Note that html format is implicit, default, you dont need to specify it in the u
 ### Redirects
 
 See [Redirects](./redirects) to redirect user to a different page.
+
+### Metadata
+
+A page can be extended using `metadata` property to store any kind of key-value pairs, for example:
+
+```yaml
+---
+slug: sign-up/choose-role
+format: html
+layout_name: application
+name: Choose Role
+metadata:
+  title: "This it the title"
+  description: "A description"
+  tags: ["signup", "choose", "landing"]
+---
+```
+
+#### Displaying metadata on the page
+
+Metadata is available through Liquid as `page.metadata`
+
+{% raw %}
+```iquid
+
+<div class="col">
+    <h1> {{ page.metadata.title }} </h1>
+
+    <section>{{ page.metadata.description }}</section>
+
+    <ul>
+        {% for tag in page.metadata.tags %}
+            <li> {{ tag }} </li>
+        {% endfor %}
+    </ul>
+
+    <strong>
+        {{ page.metadata.tags | join: "," }}
+    </strong>
+</div>
+```
+{% endraw %}
+
+#### Searching for a page using it's metadata in GraphQL
+
+```graphql
+query find_page_matching_metadata(
+  $metadata: String
+)
+ {
+  pages: pages(
+    metadata: $metadata
+  ) {
+    id
+    slug
+    metadata
+    format
+    page_url
+    title
+    content
+  }
+}
+```
+
+There are also a couple of more complex queries available (all support `page` and `per_page` pagination arguments).
+
+* Find pages WITH word `TITLE` somewhere in metadata (in keys or values)
+
+{% raw %}
+```graphql
+{% execute_query strony, page: 1, per_page: 20, metadata: "TITLE", result_name: res %}
+```
+{% endraw %}
+
+* Find pages WITHOUT word `TITLE` in metadata (in keys or values)
+
+{% raw %}
+```graphql
+{% execute_query strony, exclude: 'true', metadata: "TITLE", result_name: res %}
+```
+{% endraw %}
+
+* Match pages having top-level key `tags`
+
+{% raw %}
+```graphql
+{% execute_query strony, has_key: 'tags', result_name: res %}
+```
+{% endraw %}
+
+* Match pages withouth "tags" key
+
+{% raw %}
+```graphql
+{% execute_query strony, exclude: 'true', has_key: 'tags', result_name: res %}
+```
+{% endraw %}
+
+* Match pages with key `tags` having (or including) value `bar`
+
+{% raw %}
+```graphql
+{% execute_query strony, name: 'tags', value: 'bar', result_name: res %}
+```
+{% endraw %}
+
+* Match pages that do not have key `tags` equal (or including) to `bar`
+
+{% raw %}
+```graphql
+{% execute_query strony, exclude: 'true', name: 'tags', value: 'bar', result_name: res %}
+```
+{% endraw %}
